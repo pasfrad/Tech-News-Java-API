@@ -23,6 +23,8 @@ public class User implements Serializable {
 
     @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Post> posts;
+
+    // Need to use FetchType.LAZY to resolve multiple bags exception
     @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Vote> votes;
     @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -33,6 +35,10 @@ public class User implements Serializable {
         this.username = username;
         this.email = email;
         this.password = password;
+    }
+
+    public User() {
+
     }
 
     public Integer getId() {
