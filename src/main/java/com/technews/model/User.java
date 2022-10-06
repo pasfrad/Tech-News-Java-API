@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 
+//test
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name = "user")
